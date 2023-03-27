@@ -1,0 +1,1113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+@media (min-width: 1024px) and (min-height: 780px) {
+  .Container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .bodyVertical {
+    display: flex;
+    width: 100%;
+    height: 90%;
+  }
+
+  .ContainerHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 0 160px;
+    position: absolute;
+  }
+
+  .Sh1 {
+    color: red;
+  }
+
+  .Title {
+    font-size: 38px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+  }
+
+  .Ptitle {
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .Ctitle {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .containerComposants {
+    width: 100%;
+    height: 68%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .graph {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .barchart {
+    width: 100%;
+    height: 50%;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .pBarchart {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    color: #20253a;
+    margin-top: -176px;
+    margin-left: 67px;
+  }
+
+  .containerNutritionnelle {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .ContainerLineChart {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .shadow {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    position: absolute;
+  }
+
+  .containerShadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .recharts-surface {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pArea {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 75%;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: -132px;
+    margin-left: -34px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+
+  .lineChart {
+    width: 30%;
+    height: 100%;
+    background: #ff0000;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ContainerRadar {
+    width: 30%;
+    height: 100%;
+    background: #282d30;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ContainerPie {
+    width: 30%;
+    height: 100%;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pPieChart {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-top: -145px;
+    margin-left: 30px;
+  }
+
+  /* // NUTRITIONNELLE // */
+
+  .nutritionnelle {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+  }
+
+  .containerNutriments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+  }
+
+  .svg {
+    margin: 15px;
+  }
+
+  .Vnutritionnelle {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #74798c;
+  }
+
+  .nutrientsCount {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px;
+    color: #282d30;
+  }
+
+  .imgNav {
+    width: 54px;
+    height: 54px;
+  }
+
+  .items {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .Logo {
+    width: 178px;
+    height: 60px;
+    margin-left: 28px;
+    margin-top: 10px;
+  }
+
+  .score {
+    position: absolute;
+    top: 32%;
+    left: 21%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .span1 {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .span2 {
+    text-align: center;
+    width: 60%;
+    color: #74798c;
+  }
+}
+
+/* // 1440*900 // */
+/* // // */
+
+@media (min-width: 1440px) and (min-height: 900px) {
+  .Container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .bodyVertical {
+    display: flex;
+    width: 100%;
+    height: 90%;
+  }
+
+  .ContainerHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 80px 0 200px;
+    position: absolute;
+  }
+
+  .Sh1 {
+    color: red;
+  }
+
+  .Title {
+    font-size: 38px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+  }
+
+  .Ptitle {
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .Ctitle {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .containerComposants {
+    width: 100%;
+    height: 68%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .graph {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  }
+
+  .barchart {
+    width: 100%;
+    height: 55%;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .pBarchart {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    color: black;
+    margin-top: -240px;
+    margin-left: 138px;
+  }
+
+  .containerNutritionnelle {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .ContainerLineChart {
+    width: 100%;
+    height: 39%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .shadow {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    position: absolute;
+  }
+
+  .containerShadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .recharts-surface {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pArea {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 68%;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: -170px;
+    margin-left: -53px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+
+  .lineChart {
+    width: 25%;
+    height: 100%;
+    background: #ff0000;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ContainerRadar {
+    width: 25%;
+    height: 100%;
+    background: #282d30;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ContainerPie {
+    width: 25%;
+    height: 100%;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pPieChart {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-top: -176px;
+    margin-left: 45px;
+  }
+
+  /* // NUTRITIONNELLE // */
+
+  .nutritionnelle {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+  }
+
+  .containerNutriments {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+  }
+
+  .svg {
+    margin: 15px;
+  }
+
+  .Vnutritionnelle {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #74798c;
+    font-size: 20px;
+  }
+
+  .nutrientsCount {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px;
+    color: #282d30;
+  }
+
+  .imgNav {
+    width: 54px;
+    height: 54px;
+  }
+
+  .items {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .Logo {
+    width: 178px;
+    height: 60px;
+    margin-left: 28px;
+    margin-top: 10px;
+  }
+
+  .score {
+    position: absolute;
+    top: 37%;
+    left: 28%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .span1 {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .span2 {
+    text-align: center;
+    width: 60%;
+    color: #74798c;
+  }
+}
+
+@media (min-width: 1440px) and (min-height: 900px) {
+  .Container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .bodyVertical {
+    display: flex;
+    width: 100%;
+    height: 90%;
+  }
+
+  .ContainerHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 150px 0 270px;
+    position: absolute;
+  }
+
+  .Sh1 {
+    color: red;
+  }
+
+  .Title {
+    font-size: 38px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+  }
+
+  .Ptitle {
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .Ctitle {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .containerComposants {
+    width: 100%;
+    height: 68%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .graph {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  }
+
+  .barchart {
+    width: 100%;
+    height: 55%;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .pBarchart {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    color: black;
+    margin-top: -285px;
+    margin-left: 138px;
+  }
+
+  .containerNutritionnelle {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .ContainerLineChart {
+    width: 100%;
+    height: 39%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .shadow {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    position: absolute;
+  }
+
+  .containerShadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .recharts-surface {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pArea {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 66%;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: -170px;
+    margin-left: -53px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+
+  .lineChart {
+    width: 25%;
+    height: 100%;
+    background: #ff0000;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ContainerRadar {
+    width: 25%;
+    height: 100%;
+    background: #282d30;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ContainerPie {
+    width: 25%;
+    height: 100%;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pPieChart {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-top: -176px;
+    margin-left: 48px;
+  }
+
+  /* // NUTRITIONNELLE // */
+
+  .nutritionnelle {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+  }
+
+  .containerNutriments {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+  }
+
+  .svg {
+    margin: 15px;
+  }
+
+  .Vnutritionnelle {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #74798c;
+    font-size: 20px;
+  }
+
+  .nutrientsCount {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px;
+    color: #282d30;
+  }
+
+  .imgNav {
+    width: 54px;
+    height: 54px;
+  }
+
+  .items {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .Logo {
+    width: 178px;
+    height: 60px;
+    margin-left: 28px;
+    margin-top: 10px;
+  }
+
+  .score {
+    position: absolute;
+    top: 37%;
+    left: 32%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .span1 {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .span2 {
+    text-align: center;
+    width: 60%;
+    color: #74798c;
+  }
+}
+
+@media (min-width: 2560px) and (min-height: 1024px) {
+  .Container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .bodyVertical {
+    display: flex;
+    width: 100%;
+    height: 90%;
+  }
+
+  .ContainerHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 150px 0 240px;
+    position: absolute;
+  }
+
+  .Sh1 {
+    color: red;
+  }
+
+  .Title {
+    font-size: 48px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+  }
+
+  .Ptitle {
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .Ctitle {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  .containerComposants {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .graph {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  }
+
+  .barchart {
+    width: 100%;
+    height: 50%;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .pBarchart {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    color: black;
+    margin-top: -313px;
+    margin-left: 135px;
+  }
+
+  .containerNutritionnelle {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .ContainerLineChart {
+    width: 100%;
+    height: 44%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .shadow {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    position: absolute;
+  }
+
+  .containerShadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .recharts-surface {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pArea {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 40%;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: -195px;
+    margin-left: -200px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+
+  .lineChart {
+    width: 25%;
+    height: 100%;
+    background: #ff0000;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ContainerRadar {
+    width: 25%;
+    height: 100%;
+    background: #282d30;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ContainerPie {
+    width: 25%;
+    height: 100%;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 2%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pPieChart {
+    display: flex;
+    justify-content:flex-start;
+    position: absolute;
+    width: 100%;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-top: -190px;
+    margin-left: 115px;
+  }
+
+  /* // NUTRITIONNELLE // */
+
+  .nutritionnelle {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+  }
+
+  .containerNutriments {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+  }
+
+  .svg {
+    margin: 15px;
+  }
+
+  .Vnutritionnelle {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #74798c;
+    font-size: 20px;
+  }
+
+  .nutrientsCount {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px;
+    color: black;
+    font-size: 25px;
+  }
+
+  .imgNav {
+    width: 74px;
+    height: 74px;
+    margin: 15px;
+  }
+
+  .items {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .Logo {
+    width: 178px;
+    height: 60px;
+    margin-left: 28px;
+    margin-top: 10px;
+  }
+
+  .score {
+    position: absolute;
+    top: 37%;
+    left: 35%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .span1 {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .span2 {
+    text-align: center;
+    width: 60%;
+    color: #74798c;
+  }
+}

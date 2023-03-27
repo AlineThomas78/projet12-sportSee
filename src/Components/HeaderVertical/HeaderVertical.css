@@ -1,0 +1,56 @@
+/* //  NAV VERTICAL // */
+
+.NavVertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 117px;
+    height: auto;
+    background: #020203;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.items {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.items2 {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LinkIcon {
+    width: 100%;
+    height: 316px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CopyRightContainer {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    transform: rotate(-90deg);
+}
+
+.CopyRight {
+    margin-top: 50px;
+}
+
+.imgNav{
+    width: 54px;
+    height: 54px;
+}
