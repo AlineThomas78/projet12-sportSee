@@ -12,10 +12,12 @@ export { providerAverageSessionsFromAPI };
 
 const providerPerformance = `Mock/${currentUser}/userPerformance.json`;
 const providerPerformanceFromAPI = `http://localhost:3000/user/${currentUser}/performance`;
+
 export { providerPerformance };
 export { providerPerformanceFromAPI };
 
 const providerMainData = `Mock/${currentUser}/userMainData.json`;
 const providerMainDataFromAPI = `http://localhost:3000/user/${currentUser}`;
+
 export { providerMainData };
 export { providerMainDataFromAPI };

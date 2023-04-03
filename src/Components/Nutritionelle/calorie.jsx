@@ -1,6 +1,7 @@
 import calorie from "../../Asset/nutritionnelle/calorie.svg";
 import { useFetch } from "../../Hooks/hooks";
 import { FormatCalorieData } from "../../model/CaloriesData";
+import currentUser from "../../utils/currentUser";
 
 /**
 A component that displays the user's calorie count.
@@ -8,7 +9,7 @@ A component that displays the user's calorie count.
 @return {JSX.Element} JSX.Element representation of the component.
 */
 function Calorie() {
-  const { data } = useFetch(`http://localhost:3000/user/12`);
+  const { data } = useFetch(`http://localhost:3000/user/${currentUser}`);
   const userCaloriesFormatted = new FormatCalorieData(data?.data);
 //   console.log(userCaloriesFormatted)
 

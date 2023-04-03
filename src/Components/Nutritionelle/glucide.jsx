@@ -1,13 +1,14 @@
 import glucide from "../../Asset/nutritionnelle/glucide.svg";
 import { useFetch } from "../../Hooks/hooks";
 import { FormatGlucideData } from "../../model/Glucides.Data";
+import currentUser from "../../utils/currentUser";
 
 /**
 React component that displays the user's carbohydrate intake.
 @returns {JSX.Element} The JSX code that displays the carbohydrate intake.
 */
 function Glucide() {
-  const { data } = useFetch(`http://localhost:3000/user/12`);
+  const { data } = useFetch(`http://localhost:3000/user/${currentUser}`);
   const userGlucideFormatted = new FormatGlucideData(data?.data);
   
   return (

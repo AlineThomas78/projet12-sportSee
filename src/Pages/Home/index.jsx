@@ -6,7 +6,7 @@ A page component for the Home page.
 import "./home.css";
 import { useFetch } from "../../Hooks/hooks";
 import Bart from "../../Components/BarChart";
-import {BarChart,RadarChart,PieChart,AreaChart} from "recharts";
+import {BarChart,PieChart,AreaChart} from "recharts";
 import Calorie from "../../Components/Nutritionelle/calorie";
 import Proteine from "../../Components/Nutritionelle/proteine";
 import Glucide from "../../Components/Nutritionelle/glucide";
@@ -14,6 +14,8 @@ import Lipide from "../../Components/Nutritionelle/lipide";
 import AreaCharts from "../../Components/AreaChart/index.jsx";
 import RadarCharts from "../../Components/RadarChart/index.jsx";
 import PieCharts from "../../Components/RadialChart/index";
+import { FormatRadar } from "../../model/RadarData";
+import { providerPerformance } from "../../utils/provider";
 
 /**
 
@@ -29,8 +31,10 @@ Fetches user data from a server using the useFetch hook.
 @param {string} url - The URL to fetch data from.
 @returns {Object} - The data object containing the user's main data, average sessions, and performance, as well as any error or loading state.
 */
-  const { data } = useFetch(`http://localhost:3000/user/12`);
  
+  const {data} = useFetch(providerPerformance);
+  const userRadarFormatted = new FormatRadar(data?.data);
+  console.log(data)
   return (
     <>
       <div className="ContainerHome">
@@ -38,7 +42,7 @@ Fetches user data from a server using the useFetch hook.
           <div>
             <h1 className="Title">
               Bonjour{" "}
-              <span className="Sh1">{data?.data?.userInfos?.firstName}</span>
+              <span className="Sh1"> {data?.data?.userInfos?.firstName}</span>
             </h1>
             <p className="Ptitle">
               Félicitation ! Vous avez explosé vos objectifs hier 👏
@@ -64,11 +68,11 @@ Fetches user data from a server using the useFetch hook.
                     <AreaChart />
                 </div>
 
-              <div className="ContainerRadar">
-                <RadarChart data={data} />
-                  <RadarCharts data={data} />
-                <RadarChart />
-              </div>
+             
+                
+                  <RadarCharts userRadarFormatted={userRadarFormatted} />
+                
+              
               <div className="ContainerPie">
               <p className="pPieChart">Score</p>
                 <PieChart data={data} />
@@ -80,7 +84,7 @@ Fetches user data from a server using the useFetch hook.
 
           <div className="containerNutritionnelle">
             <div className="nutritionnelle">
-              <Calorie />
+              <Calorie  />
             </div>
 
             <div className="nutritionnelle">

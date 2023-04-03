@@ -16,7 +16,7 @@ A custom hook that uses the fetch API to retrieve data from a specified URL.
 @returns {object} An object containing the fetched data and an error state.
 The data property contains the fetched data or null if the fetch was unsuccessful.
 */
-  // const { data } = useFetch(`http://localhost:3000/user/12`);
+  const { data } = useFetch(`http://localhost:3000/user/12`);
 /**
 A custom hook that returns test data from a mock provider.
 @function useFetch
@@ -24,7 +24,7 @@ A custom hook that returns test data from a mock provider.
 @returns {object} An object containing the test data and an error state.
 The data property contains the test data or null if the provider data was invalid.
 */
-  const {data} = useFetch(providerMainData);
+  // const {data} = useFetch(providerMainData);
 /**
 A class that formats data for a radial chart.
 @class FormatRadialData

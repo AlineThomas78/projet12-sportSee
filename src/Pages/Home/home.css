@@ -558,7 +558,7 @@
   }
 }
 
-@media (min-width: 1440px) and (min-height: 900px) {
+@media (min-width: 1440px) and (max-height: 900px) {
   .Container {
     width: 100vw;
     height: 100vh;
@@ -834,7 +834,7 @@
   }
 }
 
-@media (min-width: 2560px) and (min-height: 1024px) {
+@media (min-width: 2560px) and (max-height: 1080px) {
   .Container {
     width: 100vw;
     height: 100vh;

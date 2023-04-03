@@ -11,10 +11,12 @@ export function useFetch(url) {
 
   useEffect(() => {
     if (!url) return;
-    let controller = new AbortController();
+    // let controller = new AbortController();
     async function fetchData() {
       try {
-        const response = await fetch(url, { signal: controller.signal });
+        const response = await fetch(url,
+          //  { signal: controller.signal }
+           );
         const data = await response.json();
         setData(data);
       } catch (err) {
@@ -24,7 +26,7 @@ export function useFetch(url) {
     }
 
     fetchData();
-    return () => controller?.abort();
+    // return () => controller?.abort();
   }, [url]);
 
   return {  data, error };
