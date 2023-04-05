@@ -1,8 +1,5 @@
-import { XAxis, Tooltip, Area,  AreaChart, ResponsiveContainer} from "recharts";
-import { useFetch } from "../../Hooks/hooks";
-import { AreaChartData } from "../../model/AreaChart";
-import { providerAverageSessions } from "../../utils/provider";
-// import { providerAverageSessionsFromAPI } from "../../utils/provider";
+import { XAxis, Tooltip, Area, AreaChart, ResponsiveContainer } from "recharts";
+
 /**
 A component that displays a line chart of user's average session length for each day.
 @component
@@ -12,27 +9,74 @@ A component that displays a line chart of user's average session length for each
 Displays a line chart component using Recharts library to render user activity data.
 @returns {JSX.Element} The line chart component with the user's session data.
 */
-function AreaCharts(){
-// Fetches user activity data from the API.
-    // const {data} = useFetch(providerAverageSessionsFromAPI);
-// Fetch user activity data from Mock //
-    const {data} = useFetch(providerAverageSessions);
-    // console.log("hey",data)
-// Formats the user activity data for rendering on the line chart.
-    const userActivityFormatted = new AreaChartData(data?.data)
-//   console.log(userActivityFormatted);
+function AreaCharts({ userAreaFormatted }) {
 
-    return(
+  const customTooltipStyle = {
+    backgroundColor: "white",
+    color: "black",
+    borderRadius: "4px",
+    padding: "8px",
+    fontSize: "14px",
+    lineHeight: "1.4",
+    height:"50px",
+    
+  };
+  const CustomTooltip = ({ active, payload }) => {
+    if (active) {
+      return (
+        <div className="custom-tooltip" style={customTooltipStyle}>
+          <p className="value" style={{ marginTop: "5px" }}>{`sessionLength: ${payload[0].value}`}</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  return (
     <>
-        <ResponsiveContainer  width="100%" height="100%">
-            <AreaChart width={258} height={263} data={userActivityFormatted?.data?.sessions} margin={{ top: 5, right: 30, left: 20, bottom: 5 }} > 
-                <XAxis dataKey="day" tick = {{stroke:"#FFFFFF"}} stroke="red"  />
-                <Tooltip />
-                <Area type="basis" dataKey="sessionLength" stroke="white" fill="red" />
-            </AreaChart>
+      <div className="lineChart">
+        <div className="containerShadow">
+          <div className="shadow"></div>
+        </div>
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart
+           
+            data={userAreaFormatted?.data?.sessions}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          >
+            <XAxis dataKey="day" tick={{ fill: '#FFFFFF', opacity: '0.5' }}  stroke="red" />
+            <Tooltip content={CustomTooltip } />
+            <Area
+              type="basis"
+              dataKey="sessionLength"
+              stroke="white"
+              fill="red"
+            />
+            <text className="tArea"
+            x={20}
+            y={20}
+            fill="white"
+            fontSize={12}
+            fontFamily="Roboto"
+            fontWeight={600}
+          >
+           Durée moyenne des 
+          </text>
+          <text className="tArea"
+            x={20}
+            y={50}
+            fill="white"
+            fontSize={12}
+            fontFamily="Roboto"
+            fontWeight={600}
+          >
+           sessions
+          </text>
+          </AreaChart>
         </ResponsiveContainer>
-
+      </div>
     </>
-    )
+  );
 }
 export default AreaCharts;

@@ -24,7 +24,7 @@ function HeaderVertical() {
       <div className="items2">
         <div className="CopyRightContainer">
           <div className="CopyRight">
-            <p>Copiryght, SportSee 2020</p>
+            <p className="HVT">Copiryght, SportSee 2020</p>
           </div>
         </div>
       </div>

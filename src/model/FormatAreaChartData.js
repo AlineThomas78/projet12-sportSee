@@ -2,7 +2,7 @@
  * A class for formatting line chart data.
  * @class
  */
-class AreaChartData {
+class FormatAreaChartData {
     /**
      * Creates an instance of the LineChartData class.
      * @param {Object} data - The data to format.
@@ -30,4 +30,4 @@ class AreaChartData {
     }
 }
 
-export { AreaChartData };
+export { FormatAreaChartData };

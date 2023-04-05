@@ -1,26 +1,11 @@
-import {
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  Radar,
-  ResponsiveContainer,
-} from "recharts";
-import { useFetch } from "../../Hooks/hooks";
-import { FormatRadar } from "../../model/RadarData";
-import {
-  providerPerformance,
-  providerPerformanceFromAPI,
-} from "../../utils/provider";
+import {RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer,} from "recharts";
 
 /**
 React component that displays a radar chart based on the user's performance data.
 @returns {JSX.Element} The JSX code that displays the radar chart.
 */
 function RadarCharts({userRadarFormatted}) {
-  //Fetch data performance from Mock //
-  
 
-  // console.log(data)
 
   return (
     <div className="ContainerRadar">

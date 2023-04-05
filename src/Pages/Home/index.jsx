@@ -1,102 +1,112 @@
-/**
-A page component for the Home page.
-@function
-@returns {JSX.Element} - The Home page component JSX.Element.
-*/
 import "./home.css";
 import { useFetch } from "../../Hooks/hooks";
-import Bart from "../../Components/BarChart";
-import {BarChart,PieChart,AreaChart} from "recharts";
-import Calorie from "../../Components/Nutritionelle/calorie";
-import Proteine from "../../Components/Nutritionelle/proteine";
-import Glucide from "../../Components/Nutritionelle/glucide";
-import Lipide from "../../Components/Nutritionelle/lipide";
-import AreaCharts from "../../Components/AreaChart/index.jsx";
-import RadarCharts from "../../Components/RadarChart/index.jsx";
+
 import PieCharts from "../../Components/RadialChart/index";
-import { FormatRadar } from "../../model/RadarData";
-import { providerPerformance } from "../../utils/provider";
+
+import {
+  providerActivityFromAPI,
+  providerAverageSessionsFromAPI,
+  providerPerformanceFromAPI,
+  providerMainDataFromAPI,
+} from "../../utils/provider";
+
+import Title from "../../Components/Title/title";
+
+import { FormatActivityData } from "../../model/FormatActivityData";
+import Bart from "../../Components/Bart";
+
+import { FormatRadarData } from "../../model/FormatRadarData";
+import RadarCharts from "../../Components/RadarChart/index.jsx";
+
+import AreaCharts from "../../Components/AreaChart/index.jsx";
+import { FormatAreaChartData } from "../../model/FormatAreaChartData";
+
+import Nutritionelle from "../../Components/Nutritionelle/nutritionelle";
+import { FormatRadialData } from "../../model/FormatRadialData";
+
+import calorie from "../../Asset/nutritionnelle/calorie.svg";
+import proteine from "../../Asset/nutritionnelle/proteine.svg";
+import glucide from "../../Asset/nutritionnelle/glucide.svg";
+import lipide from "../../Asset/nutritionnelle/lipide.svg";
+
+import { FormatCalorieData } from "../../model/FormatCalorieData";
+import { FormatProteineData } from "../../model/FormatProteineData";
+import { FormatGlucideData } from "../../model/FormatGlucideData";
+import { FormatLipideData } from "../../model/FormatLipideData";
+
+import PropTypes from 'prop-types';
 
 /**
-
 A function component that renders a home page with user data and charts.
 @function Home
 @returns {JSX.Element} - Rendered component.
 **/
 function Home() {
-  /*
-Fetches user data from a server using the useFetch hook.
-@name useFetch
-@function
-@param {string} url - The URL to fetch data from.
-@returns {Object} - The data object containing the user's main data, average sessions, and performance, as well as any error or loading state.
-*/
- 
-  const {data} = useFetch(providerPerformance);
-  const userRadarFormatted = new FormatRadar(data?.data);
-  console.log(data)
+  const performance = useFetch(providerPerformanceFromAPI);
+  const userRadarFormatted = new FormatRadarData(performance?.data?.data);
+
+  const activity = useFetch(providerActivityFromAPI);
+  const userBartFormatted = new FormatActivityData(activity.data?.data);
+
+  const sessions = useFetch(providerAverageSessionsFromAPI);
+  const userAreaFormatted = new FormatAreaChartData(sessions?.data?.data);
+
+  const main = useFetch(providerMainDataFromAPI);
+  const userRadialFormatted = new FormatRadialData(main?.data?.data);
+
+  const calories = new FormatCalorieData(main?.data?.data);
+  const proteines = new FormatProteineData(main?.data?.data);
+  const glucides = new FormatGlucideData(main?.data?.data);
+  const lipides = new FormatLipideData(main?.data?.data);
+
+  // console.log(lipides);
   return (
     <>
       <div className="ContainerHome">
-        <div className="Ctitle">
-          <div>
-            <h1 className="Title">
-              Bonjour{" "}
-              <span className="Sh1"> {data?.data?.userInfos?.firstName}</span>
-            </h1>
-            <p className="Ptitle">
-              Félicitation ! Vous avez explosé vos objectifs hier 👏
-            </p>
-          </div>
-        </div>
+        <Title />
         <div className="containerComposants">
           <div className="graph">
             <div className="barchart">
-              <Bart data={data}>
-                <BarChart data={data} />
-              </Bart>
+              <Bart userBartFormatted={userBartFormatted} />
             </div>
-
             <div className="ContainerLineChart">
-           
-                <div className="lineChart">
-                <p className="pArea">Durée moyenne des sessions</p>
-                  <div className="containerShadow">
-                 <div className="shadow"></div></div>
-                    <AreaChart data={data} />
-                      <AreaCharts data={data} />
-                    <AreaChart />
-                </div>
-
-             
-                
-                  <RadarCharts userRadarFormatted={userRadarFormatted} />
-                
-              
-              <div className="ContainerPie">
-              <p className="pPieChart">Score</p>
-                <PieChart data={data} />
-                  <PieCharts data={data} />
-                <PieChart />
-              </div>
+              <AreaCharts userAreaFormatted={userAreaFormatted} />
+              <RadarCharts userRadarFormatted={userRadarFormatted} />
+              <PieCharts userRadialFormatted={userRadialFormatted} />
             </div>
           </div>
 
           <div className="containerNutritionnelle">
             <div className="nutritionnelle">
-              <Calorie  />
+              <Nutritionelle
+                img={calorie}
+                title="Calories"
+                data={calories?.data?.keyData?.calorieCount}
+              />
             </div>
 
             <div className="nutritionnelle">
-              <Proteine />
+              <Nutritionelle
+                img={proteine}
+                title="Proteines"
+                data={proteines?.data?.keyData?.proteinCount}
+              />
             </div>
 
             <div className="nutritionnelle">
-              <Glucide />
+              <Nutritionelle
+                img={glucide}
+                title="Glucides"
+                data={glucides?.data?.keyData?.carbohydrateCount}
+              />
             </div>
 
             <div className="nutritionnelle">
-              <Lipide />
+              <Nutritionelle
+                img={lipide}
+                title="Lipides"
+                data={lipides?.data?.keyData?.lipidCount}
+              />
             </div>
           </div>
         </div>
@@ -104,5 +114,26 @@ Fetches user data from a server using the useFetch hook.
     </>
   );
 }
+
+Home.propTypes = {
+  // propTypes pour les différents composants utilisés
+  Bart: PropTypes.shape({
+    userBartFormatted: PropTypes.object.isRequired,
+  }).isRequired,
+  AreaCharts: PropTypes.shape({
+    userAreaFormatted: PropTypes.object.isRequired,
+  }).isRequired,
+  RadarCharts: PropTypes.shape({
+    userRadarFormatted: PropTypes.object.isRequired,
+  }).isRequired,
+  PieCharts: PropTypes.shape({
+    userRadialFormatted: PropTypes.object.isRequired,
+  }).isRequired,
+  Nutritionelle: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    data: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default Home;

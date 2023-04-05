@@ -44,6 +44,7 @@
     line-height: 24px;
     color: #FFFFFF;
     transform: rotate(-90deg);
+    width: 100%;
 }
 
 .CopyRight {
@@ -53,4 +54,9 @@
 .imgNav{
     width: 54px;
     height: 54px;
+}
+
+.HVT{
+    width: 200px;
+    font-size: 14px;
 }

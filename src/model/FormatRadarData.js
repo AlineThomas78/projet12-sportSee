@@ -2,7 +2,7 @@
  * A class for formatting radar data.
  * @class
  */
-class FormatRadar {
+class FormatRadarData {
     /**
      * Creates an instance of the FormatRadar class.
      * @param {Object} data - The data to format.
@@ -34,5 +34,5 @@ class FormatRadar {
     }
   }
   
-  export { FormatRadar };
+  export { FormatRadarData };
   
