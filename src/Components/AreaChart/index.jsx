@@ -73,7 +73,7 @@ function AreaCharts({ userAreaFormatted }) {
               x={isDesktop? 15 : 15}
               y={isDesktop? 30 : 20}
               fill="white"
-              fontSize={isDesktop? 16 : 13}
+              fontSize={isDesktop? 16 : 12}
               fontFamily="Roboto"
               fontWeight={500}
             >
@@ -82,9 +82,9 @@ function AreaCharts({ userAreaFormatted }) {
             <text
               className="tArea"
               x={isDesktop? 15 : 15}
-              y={isDesktop? 55 : 35}
+              y={isDesktop? 55 : 40}
               fill="white"
-              fontSize={isDesktop? 16 : 13}
+              fontSize={isDesktop? 16 : 12}
               fontFamily="Roboto"
               fontWeight={500}
             >
