@@ -19,11 +19,11 @@ class FormatRadialData {
       todayScore: [
         {
           name: "todayScore",
-          value: (data?.todayScore) * 100
+          value: (data?.todayScore || data?.score) * 100
         },
         {
           name: "scoreRestant",
-          value: 100 - (data?.todayScore) * 100
+          value: 100 - (data?.todayScore || data?.score) * 100
         },
       ]
     };

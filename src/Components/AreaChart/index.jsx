@@ -10,7 +10,6 @@ Displays a line chart component using Recharts library to render user activity d
 @returns {JSX.Element} The line chart component with the user's session data.
 */
 function AreaCharts({ userAreaFormatted }) {
-
   const customTooltipStyle = {
     backgroundColor: "white",
     color: "black",
@@ -18,14 +17,16 @@ function AreaCharts({ userAreaFormatted }) {
     padding: "8px",
     fontSize: "14px",
     lineHeight: "1.4",
-    height:"50px",
-    
+    height: "50px",
   };
   const CustomTooltip = ({ active, payload }) => {
     if (active) {
       return (
         <div className="custom-tooltip" style={customTooltipStyle}>
-          <p className="value" style={{ marginTop: "5px" }}>{`sessionLength: ${payload[0].value}`}</p>
+          <p
+            className="value"
+            style={{ marginTop: "5px" }}
+          >{`sessionLength: ${payload[0].value}`}</p>
         </div>
       );
     }
@@ -41,38 +42,52 @@ function AreaCharts({ userAreaFormatted }) {
         </div>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
-           
             data={userAreaFormatted?.data?.sessions}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
           >
-            <XAxis dataKey="day" tick={{ fill: '#FFFFFF', opacity: '0.5' }}  stroke="red" />
-            <Tooltip content={CustomTooltip } />
+            <XAxis
+              dataKey="day"
+              tick={{ fill: "#FFFFFF", opacity: "0.5" }}
+              stroke="red"
+            />
+            <Tooltip
+              content={CustomTooltip}
+              cursor={{
+                stroke: "#FFFFFF",
+                strokeWidth: 5,
+                strokeOpacity: 0.2,
+                fill: "#FFFFFF",
+                fillOpacity: 0.2
+              }}
+            />
             <Area
               type="basis"
               dataKey="sessionLength"
               stroke="white"
               fill="red"
             />
-            <text className="tArea"
-            x={20}
-            y={20}
-            fill="white"
-            fontSize={12}
-            fontFamily="Roboto"
-            fontWeight={600}
-          >
-           Durée moyenne des 
-          </text>
-          <text className="tArea"
-            x={20}
-            y={50}
-            fill="white"
-            fontSize={12}
-            fontFamily="Roboto"
-            fontWeight={600}
-          >
-           sessions
-          </text>
+            <text
+              className="tArea"
+              x={20}
+              y={30}
+              fill="white"
+              fontSize={15}
+              fontFamily="Roboto"
+              fontWeight={500}
+            >
+              Durée moyenne des
+            </text>
+            <text
+              className="tArea"
+              x={20}
+              y={50}
+              fill="white"
+              fontSize={15}
+              fontFamily="Roboto"
+              fontWeight={500}
+            >
+              sessions
+            </text>
           </AreaChart>
         </ResponsiveContainer>
       </div>

@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 export function useFetch(url) {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
+  const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
     if (!url) return;
@@ -22,12 +23,14 @@ export function useFetch(url) {
       } catch (err) {
         console.log(err);
         setError(true);
-      } 
+      } finally{
+        setisLoading(false);
+      }
     }
 
     fetchData();
     // return () => controller?.abort();
   }, [url]);
 
-  return {  data, error };
+  return {  data, error, isLoading };
 }

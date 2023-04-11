@@ -3094,6 +3094,14 @@ babel-types@^6.26.0:
     lodash "^4.17.4"
     to-fast-properties "^1.0.3"
 
+Babel@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/Babel/-/Babel-0.0.1.tgz"
+  integrity sha512-RWEzb4K28gBlQPMjARJYPTBsrVhQNIM2AqpeouW0yZCCO/7Sei88qouGyuuJEoo7ql6mfCkwEACqPhfuY6sYTw==
+  dependencies:
+    step "0.0.x"
+    underscore "1.x.x"
+
 babylon@^6.18.0:
   version "6.18.0"
   resolved "https://registry.npmjs.org/babylon/-/babylon-6.18.0.tgz"
@@ -9528,6 +9536,11 @@ statuses@2.0.1:
   resolved "https://registry.npmjs.org/statuses/-/statuses-2.0.1.tgz"
   integrity sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==
 
+step@0.0.x:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/step/-/step-0.0.6.tgz"
+  integrity sha512-qSSeQinUJk2w38vUFobjFoE307GqsozMC8VisOCkJLpklvKPT0ptPHwWOrENoag8rgLudvTkfP3bancwP93/Jw==
+
 stop-iteration-iterator@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/stop-iteration-iterator/-/stop-iteration-iterator-1.0.0.tgz"
@@ -10094,7 +10107,7 @@ unbox-primitive@^1.0.2:
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
 
-underscore@^1.13.2, underscore@~1.13.2:
+underscore@^1.13.2, underscore@~1.13.2, underscore@1.x.x:
   version "1.13.6"
   resolved "https://registry.npmjs.org/underscore/-/underscore-1.13.6.tgz"
   integrity sha512-+A5Sja4HP1M08MaXya7p5LvjuM7K6q/2EaC0+iovj/wOcMsTzMvDFbasi/oSapiwOlt252IqsKqPjCl7huKS0A==

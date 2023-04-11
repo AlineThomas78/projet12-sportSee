@@ -1,4 +1,5 @@
 /* @media (min-width: 1024px) and (min-height: 780px) { */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
   body {
     position: relative;
     width: 100%;

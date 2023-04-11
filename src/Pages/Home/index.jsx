@@ -1,5 +1,6 @@
 import "./home.css";
 import { useFetch } from "../../Hooks/hooks";
+import PropTypes from 'prop-types';
 
 import PieCharts from "../../Components/RadialChart/index";
 
@@ -8,9 +9,11 @@ import {
   providerAverageSessionsFromAPI,
   providerPerformanceFromAPI,
   providerMainDataFromAPI,
+  providerPerformance,
+  providerActivity,
+  providerAverageSessions,
+  providerMainData,
 } from "../../utils/provider";
-
-import Title from "../../Components/Title/title";
 
 import { FormatActivityData } from "../../model/FormatActivityData";
 import Bart from "../../Components/Bart";
@@ -34,7 +37,7 @@ import { FormatProteineData } from "../../model/FormatProteineData";
 import { FormatGlucideData } from "../../model/FormatGlucideData";
 import { FormatLipideData } from "../../model/FormatLipideData";
 
-import PropTypes from 'prop-types';
+const isFromMock = false;
 
 /**
 A function component that renders a home page with user data and charts.
@@ -42,16 +45,26 @@ A function component that renders a home page with user data and charts.
 @returns {JSX.Element} - Rendered component.
 **/
 function Home() {
-  const performance = useFetch(providerPerformanceFromAPI);
+  const performance = useFetch(
+    isFromMock ? providerPerformance : providerPerformanceFromAPI
+  );
   const userRadarFormatted = new FormatRadarData(performance?.data?.data);
+  console.log(userRadarFormatted)
 
-  const activity = useFetch(providerActivityFromAPI);
-  const userBartFormatted = new FormatActivityData(activity.data?.data);
+  const activity = useFetch(
+    isFromMock ? providerActivity : providerActivityFromAPI
+  );
+  const userBartFormatted = new FormatActivityData(activity?.data?.data);
+ 
 
-  const sessions = useFetch(providerAverageSessionsFromAPI);
+  const sessions = useFetch(
+    isFromMock ? providerAverageSessions : providerAverageSessionsFromAPI
+  );
   const userAreaFormatted = new FormatAreaChartData(sessions?.data?.data);
 
-  const main = useFetch(providerMainDataFromAPI);
+  const main = useFetch(
+    isFromMock ? providerMainData : providerMainDataFromAPI
+  );
   const userRadialFormatted = new FormatRadialData(main?.data?.data);
 
   const calories = new FormatCalorieData(main?.data?.data);
@@ -59,20 +72,43 @@ function Home() {
   const glucides = new FormatGlucideData(main?.data?.data);
   const lipides = new FormatLipideData(main?.data?.data);
 
-  // console.log(lipides);
+  if (main.isLoading || sessions.isLoading) {
+    return <div>Chargement </div>;
+  }
+
+  if (main.error) {
+    return <div>Erreur </div>;
+  }
+
+  // console.log(providerMainData);
   return (
     <>
       <div className="ContainerHome">
-        <Title />
+        <div className="Ctitle">
+          <div>
+            <h1 className="Title">
+              Bonjour{" "}
+              <span className="Sh1">
+                {" "}
+                {main?.data?.data?.userInfos?.firstName}
+              </span>
+            </h1>
+            <p className="Ptitle">
+              Félicitation ! Vous avez explosé vos objectifs hier 👏
+            </p>
+          </div>
+        </div>
+
         <div className="containerComposants">
           <div className="graph">
             <div className="barchart">
-              <Bart userBartFormatted={userBartFormatted} />
+              <Bart userBartFormatted={userBartFormatted } />
             </div>
             <div className="ContainerLineChart">
               <AreaCharts userAreaFormatted={userAreaFormatted} />
               <RadarCharts userRadarFormatted={userRadarFormatted} />
               <PieCharts userRadialFormatted={userRadialFormatted} />
+              
             </div>
           </div>
 
@@ -115,25 +151,39 @@ function Home() {
   );
 }
 
-Home.propTypes = {
-  // propTypes pour les différents composants utilisés
-  Bart: PropTypes.shape({
-    userBartFormatted: PropTypes.object.isRequired,
-  }).isRequired,
-  AreaCharts: PropTypes.shape({
-    userAreaFormatted: PropTypes.object.isRequired,
-  }).isRequired,
-  RadarCharts: PropTypes.shape({
-    userRadarFormatted: PropTypes.object.isRequired,
-  }).isRequired,
-  PieCharts: PropTypes.shape({
-    userRadialFormatted: PropTypes.object.isRequired,
-  }).isRequired,
-  Nutritionelle: PropTypes.shape({
-    img: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    data: PropTypes.number.isRequired,
-  }).isRequired,
-};
+
+
+// const HomePropTypes = {
+//   bart: PropTypes.shape({
+//     userBartFormatted: PropTypes.shape({
+//       sessions: PropTypes.arrayOf(PropTypes.shape({ day: PropTypes.string })),
+//     }).isRequired,
+//   }).isRequired,
+//   AreaCharts: PropTypes.shape({
+//     userAreaFormatted: PropTypes.object.isRequired,
+//   }).isRequired,
+//   RadarCharts: PropTypes.shape({
+//     userRadarFormatted: PropTypes.object.isRequired,
+//   }).isRequired,
+//   PieCharts: PropTypes.shape({
+//     userRadialFormatted: PropTypes.object.isRequired,
+//   }).isRequired,
+//   Nutritionelle: PropTypes.shape({
+//     img: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     data: PropTypes.number.isRequired,
+//   }).isRequired,
+// };
+
+// const checkPropTypesResult = PropTypes.checkPropTypes(
+//   HomePropTypes,
+//   Home.propTypes,
+//   "prop",
+//   "Home"
+// );
+
+// if (checkPropTypesResult) {
+//   console.error(checkPropTypesResult);
+// }
 
 export default Home;

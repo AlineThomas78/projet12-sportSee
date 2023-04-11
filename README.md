@@ -1,28 +1,17 @@
-# Getting Started with Create React App
 
-npx create-react-app SportSee
+# Instructions before cloning:
 
-# Install React-Router
+For this project you will need to clone the front and the API
 
-npm install react-router-dom
-import it into the index file / 
-import { BrowserRouter } from "react-router-dom";/ 
-<BrowserRouter></BrowserRouter>
+# Clone the project Back and follow its ReadMe :
 
-# Available Scripts
-In the project directory, you can run:
+links to the API (Back):
+-  https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
 
-# `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Cloning the project Front:
 
-# Prerequisites/Dependencies : 
+-After cloning the Front, do a `npm install`  and `npm start` to start the server
 
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-resize-detector": "^8.0.4",
-    "react-router-dom": "^6.6.1",
-    "react-scripts": "5.0.1",
-    "recharts": "^2.4.3",
-
+# Node Version :
+ - v16.18.0
