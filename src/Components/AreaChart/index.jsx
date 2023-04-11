@@ -26,7 +26,7 @@ function AreaCharts({ userAreaFormatted }) {
           <p
             className="value"
             style={{ marginTop: "5px" }}
-          >{`sessionLength: ${payload[0].value}`}</p>
+          >{`sessionLength: ${payload[0].value}  min`}</p>
         </div>
       );
     }
@@ -59,14 +59,16 @@ function AreaCharts({ userAreaFormatted }) {
                 strokeWidth: 5,
                 strokeOpacity: 0.2,
                 fill: "#FFFFFF",
-                fillOpacity: 0.2
               }}
+              
             />
             <Area
               type="basis"
               dataKey="sessionLength"
               stroke="white"
               fill="red"
+              name={userAreaFormatted?.data?.sessions + "min"}
+             
             />
             <text
               className="tArea"

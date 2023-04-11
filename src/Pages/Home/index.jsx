@@ -49,7 +49,7 @@ function Home() {
     isFromMock ? providerPerformance : providerPerformanceFromAPI
   );
   const userRadarFormatted = new FormatRadarData(performance?.data?.data);
-  console.log(userRadarFormatted)
+  // console.log(userRadarFormatted)
 
   const activity = useFetch(
     isFromMock ? providerActivity : providerActivityFromAPI
@@ -150,7 +150,6 @@ function Home() {
     </>
   );
 }
-
 
 
 // const HomePropTypes = {

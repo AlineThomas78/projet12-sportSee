@@ -31,11 +31,11 @@ function Bart({ userBartFormatted }) {
           <p
             className="value"
             style={{ marginTop: "5px" }}
-          >{`Calories: ${payload[1].value}`}</p>
+          >{`Calories: ${payload[1].value}kCal `}</p>
           <p
             className="value"
             style={{ marginTop: "15px" }}
-          >{`Kilogram: ${payload[0].value}`}</p>
+          >{`Kilogram: ${payload[0].value}g`}</p>
         </div>
       );
     }
