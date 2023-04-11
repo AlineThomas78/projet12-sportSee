@@ -43,14 +43,14 @@
   }
 
   .Ctitle {
-    width: 90%;
+    width: 100%;
     height: auto;
     margin-top: 40px;
     margin-bottom: 50px;
   }
 
   .containerComposants {
-    width: 90%;
+    width: 100%;
     height: 70%;
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,8 @@
   .graph {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
+    margin-right: 20px;
   }
 
   .barchart {
@@ -89,7 +90,7 @@
   }
 
   .containerNutritionnelle {
-    width: 25%;
+    width: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -218,6 +219,11 @@
     margin: 15px;
   }
 
+  .img {
+    width: 50px;
+    height: 50px;
+  }
+
   .Vnutritionnelle {
     font-family: "Roboto";
     font-style: normal;
@@ -231,7 +237,7 @@
     font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 12px;
     line-height: 24px;
     color: #282d30;
   }
@@ -573,34 +579,6 @@
 }
 
 @media (min-width: 1440px) and (max-height: 1024px) {
-  .legend-format {
-    font-size: 14px;
-  }
-  .score-chart__percentage {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-80%);
-    text-align: center;
-  }
-
-  .percentage--number{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-80%);
-    text-align: center;
-  }
-
-  h3{
-    position: absolute;
-    width: 150px;
-    top: 10px;
-    left: 30px;
-    font-size: 15px;
-    
-}
-
   .Container {
     width: 100vw;
     height: 100vh;

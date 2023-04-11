@@ -4,7 +4,7 @@ function Nutritionelle({ title, data, img }) {
   return (
     <div className="containerNutriments">
       <div className="svg">
-        <img src={img} alt="img flamme" />
+        <img className='img' src={img} alt="img flamme" />
       </div>
       <div className="Vnutritionnelle">
         <p className="nutrientsCount"> {data}</p>

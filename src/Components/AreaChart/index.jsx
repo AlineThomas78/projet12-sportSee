@@ -34,6 +34,8 @@ function AreaCharts({ userAreaFormatted }) {
     return null;
   };
 
+  const isDesktop = window.screen.width >= 1400;
+
   return (
     <>
       <div className="lineChart">
@@ -68,10 +70,10 @@ function AreaCharts({ userAreaFormatted }) {
             />
             <text
               className="tArea"
-              x={20}
-              y={30}
+              x={isDesktop? 15 : 15}
+              y={isDesktop? 30 : 20}
               fill="white"
-              fontSize={15}
+              fontSize={isDesktop? 16 : 13}
               fontFamily="Roboto"
               fontWeight={500}
             >
@@ -79,10 +81,10 @@ function AreaCharts({ userAreaFormatted }) {
             </text>
             <text
               className="tArea"
-              x={20}
-              y={50}
+              x={isDesktop? 15 : 15}
+              y={isDesktop? 55 : 35}
               fill="white"
-              fontSize={15}
+              fontSize={isDesktop? 16 : 13}
               fontFamily="Roboto"
               fontWeight={500}
             >
