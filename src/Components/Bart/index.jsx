@@ -8,6 +8,7 @@ import {
   Legend,
   CartesianGrid,
 } from "recharts";
+import PropTypes from 'prop-types';
 
 /**
 A bar chart component that displays a user's activity data using Recharts.
@@ -117,5 +118,19 @@ function Bart({ userBartFormatted }) {
     </>
   );
 }
+
+Bart.propTypes = {
+  userBartFormatted: PropTypes.shape({
+    data: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          day: PropTypes.string,
+          calories: PropTypes.number,
+          kilogram: PropTypes.number,
+        })
+      ),
+    }),
+  })
+};
 
 export default Bart;

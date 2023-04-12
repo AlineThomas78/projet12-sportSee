@@ -6,6 +6,7 @@ import {
   ResponsiveContainer,
   Text
 } from "recharts";
+import PropTypes from 'prop-types';
 
 /**
 React component that displays a radar chart based on the user's performance data.
@@ -50,5 +51,18 @@ const isDesktop = window.screen.width >= 1400;
     </div>
   );
 }
+
+RadarCharts.propTypes = {
+  userRadarFormatted: PropTypes.shape({
+    data: PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          kind: PropTypes.string,
+          value: PropTypes.number,
+        })
+      ),
+    }),
+  }),
+};
 
 export default RadarCharts;

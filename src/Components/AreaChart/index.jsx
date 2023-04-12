@@ -1,4 +1,5 @@
 import { XAxis, Tooltip, Area, AreaChart, ResponsiveContainer } from "recharts";
+import PropTypes from 'prop-types';
 
 /**
 A component that displays a line chart of user's average session length for each day.
@@ -98,4 +99,19 @@ function AreaCharts({ userAreaFormatted }) {
     </>
   );
 }
+
+AreaCharts.propTypes = {
+  userAreaFormatted: PropTypes.shape({
+    data: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          day: PropTypes.string,
+          sessionLength: PropTypes.number,
+        })
+      ),
+    }),
+  })
+}
+
+
 export default AreaCharts;

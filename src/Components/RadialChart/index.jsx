@@ -1,5 +1,5 @@
 import { PieChart, ResponsiveContainer, Pie, Cell } from "recharts";
-
+import PropTypes  from "prop-types";
 /**
  * A component that displays a pie chart of user's score data.
  * @component
@@ -83,6 +83,16 @@ function PieCharts({ userRadialFormatted }) {
     </>
     
   );
+}
+PieCharts.propTypes = {
+  userRadialFormatted: PropTypes.shape({
+    data: PropTypes.shape({
+      todayScore: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string,
+        value: PropTypes.number,
+      })),
+    }),
+  })
 }
 
 export default PieCharts;

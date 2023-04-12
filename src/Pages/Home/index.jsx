@@ -1,6 +1,6 @@
 import "./home.css";
 import { useFetch } from "../../Hooks/hooks";
-import PropTypes from 'prop-types';
+
 
 import PieCharts from "../../Components/RadialChart/index";
 
@@ -45,26 +45,18 @@ A function component that renders a home page with user data and charts.
 @returns {JSX.Element} - Rendered component.
 **/
 function Home() {
-  const performance = useFetch(
-    isFromMock ? providerPerformance : providerPerformanceFromAPI
-  );
+  const performance = useFetch(isFromMock ? providerPerformance : providerPerformanceFromAPI );
   const userRadarFormatted = new FormatRadarData(performance?.data?.data);
   // console.log(userRadarFormatted)
 
-  const activity = useFetch(
-    isFromMock ? providerActivity : providerActivityFromAPI
-  );
+  const activity = useFetch( isFromMock ? providerActivity : providerActivityFromAPI);
   const userBartFormatted = new FormatActivityData(activity?.data?.data);
  
 
-  const sessions = useFetch(
-    isFromMock ? providerAverageSessions : providerAverageSessionsFromAPI
-  );
+  const sessions = useFetch(isFromMock ? providerAverageSessions : providerAverageSessionsFromAPI);
   const userAreaFormatted = new FormatAreaChartData(sessions?.data?.data);
 
-  const main = useFetch(
-    isFromMock ? providerMainData : providerMainDataFromAPI
-  );
+  const main = useFetch(isFromMock ? providerMainData : providerMainDataFromAPI);
   const userRadialFormatted = new FormatRadialData(main?.data?.data);
 
   const calories = new FormatCalorieData(main?.data?.data);
@@ -80,7 +72,6 @@ function Home() {
     return <div>Erreur </div>;
   }
 
-  // console.log(providerMainData);
   return (
     <>
       <div className="ContainerHome">
@@ -88,10 +79,7 @@ function Home() {
           <div>
             <h1 className="Title">
               Bonjour{" "}
-              <span className="Sh1">
-                {" "}
-                {main?.data?.data?.userInfos?.firstName}
-              </span>
+              <span className="Sh1"> {" "}{main?.data?.data?.userInfos?.firstName} </span>
             </h1>
             <p className="Ptitle">
               Félicitation ! Vous avez explosé vos objectifs hier 👏
@@ -150,39 +138,5 @@ function Home() {
     </>
   );
 }
-
-
-// const HomePropTypes = {
-//   bart: PropTypes.shape({
-//     userBartFormatted: PropTypes.shape({
-//       sessions: PropTypes.arrayOf(PropTypes.shape({ day: PropTypes.string })),
-//     }).isRequired,
-//   }).isRequired,
-//   AreaCharts: PropTypes.shape({
-//     userAreaFormatted: PropTypes.object.isRequired,
-//   }).isRequired,
-//   RadarCharts: PropTypes.shape({
-//     userRadarFormatted: PropTypes.object.isRequired,
-//   }).isRequired,
-//   PieCharts: PropTypes.shape({
-//     userRadialFormatted: PropTypes.object.isRequired,
-//   }).isRequired,
-//   Nutritionelle: PropTypes.shape({
-//     img: PropTypes.string.isRequired,
-//     title: PropTypes.string.isRequired,
-//     data: PropTypes.number.isRequired,
-//   }).isRequired,
-// };
-
-// const checkPropTypesResult = PropTypes.checkPropTypes(
-//   HomePropTypes,
-//   Home.propTypes,
-//   "prop",
-//   "Home"
-// );
-
-// if (checkPropTypesResult) {
-//   console.error(checkPropTypesResult);
-// }
 
 export default Home;
