@@ -11,7 +11,7 @@ export function useFetch(url) {
   const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
-    if (!url) return;
+    
     // let controller = new AbortController();
     async function fetchData() {
       try {

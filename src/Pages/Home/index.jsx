@@ -51,7 +51,6 @@ function Home() {
 
   const activity = useFetch( isFromMock ? providerActivity : providerActivityFromAPI);
   const userBartFormatted = new FormatActivityData(activity?.data?.data);
- 
 
   const sessions = useFetch(isFromMock ? providerAverageSessions : providerAverageSessionsFromAPI);
   const userAreaFormatted = new FormatAreaChartData(sessions?.data?.data);
@@ -96,7 +95,6 @@ function Home() {
               <AreaCharts userAreaFormatted={userAreaFormatted} />
               <RadarCharts userRadarFormatted={userRadarFormatted} />
               <PieCharts userRadialFormatted={userRadialFormatted} />
-              
             </div>
           </div>
 
@@ -108,6 +106,7 @@ function Home() {
                 data={calories?.data?.keyData?.calorieCount}
               />
             </div>
+           
 
             <div className="nutritionnelle">
               <Nutritionelle
